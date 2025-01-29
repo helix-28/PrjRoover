@@ -12,9 +12,9 @@
             text-align: center;
         }
         header, footer {
-            background-color: #333;
             color: white;
             padding: 15px;
+            animation: rainbow 20s infinite;
         }
         main {
             padding: 20px;
@@ -24,6 +24,15 @@
             height: 400px;
             background-color: lightgray;
             margin-top: 20px;
+        }
+        @keyframes rainbow {
+            0% { background-color: orange; }
+            16% { background-color: red; }
+            33% { background-color: purple; }
+            50% { background-color: blue; }
+            66% { background-color: green; }
+            83% { background-color: yellow; }
+            100% { background-color: orange; }
         }
     </style>
 </head>
@@ -38,7 +47,7 @@
     <div id="map" style="display: none;"></div>
 </main>
 <footer>
-    <p>&copy; 2025 Mon Site Web</p>
+    <p>&copy; 2025 Bois-de-Boulogne </p>
 </footer>
 <script>
     function afficherMessage() {
