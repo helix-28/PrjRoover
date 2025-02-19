@@ -45,6 +45,14 @@
     <button onclick="afficherMap()">Contrôle libre </button>
     <button onclick="afficherMessage()">Envoi automatique vers un point </button>
     <div id="map" style="display: none;"></div>
+    <p></p>
+    <button onclick="avant()"> ↑  </button>
+    <p></p>
+    <button onclick="gauche()"> ←  </button>
+    <button onclick="arrière()"> ↓  </button>
+    <button onclick="droite()"> →  </button>
+
+
 </main>
 <footer>
     <p>&copy; 2025 Bois-de-Boulogne </p>
@@ -55,6 +63,18 @@
     }
     function afficherMap() {
         document.getElementById("map").style.display = "block";
+    }
+    function gauche() {
+    alert("je vais à gauche")
+    }
+    function droite() {
+    alert("je vais à droite")
+    }
+    function avant() {
+    alert("je vais en avant")
+    }
+    function arrière() {
+    alert("je vais en arrière")
     }
 </script>
 </body>
