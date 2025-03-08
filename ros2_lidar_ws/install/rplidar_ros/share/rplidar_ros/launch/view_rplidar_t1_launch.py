@@ -1,1 +1,0 @@
-/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/src/rplidar_ros/launch/view_rplidar_t1_launch.py
