@@ -1,1 +1,1 @@
-/home/vikmo/ros2_lidar_ws/src/rplidar_ros/launch/rplidar_s1_tcp_launch.py
+/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/src/rplidar_ros/launch/rplidar_s1_tcp_launch.py
