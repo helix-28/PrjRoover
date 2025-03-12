@@ -74,9 +74,9 @@ p1=GPIO.PWM(NSLEEP1,1000)
 
 p2=GPIO.PWM(NSLEEP2,1000)
 
-p1.start(25)
+p1.start(5)
 
-p2.start(25)
+p2.start(5)
 
 print("\n")
 
@@ -144,13 +144,6 @@ while(1):
 
             x = 'z'
 
-    elif x == 't':
-
-        GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)  # roue avant droite avance
-
-        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-
-        x = 'z'
 
     elif x == 's':
 
@@ -182,9 +175,9 @@ while(1):
 
         GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
 
-        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
 
-        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
 
         GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
 
@@ -208,9 +201,9 @@ while(1):
 
         GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
 
-        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
 
-        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
 
         GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
 
@@ -252,22 +245,6 @@ while(1):
 
         x = 'z'
 
-    elif x == 'test':
-        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
-
-        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
-
-        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
-
-        GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
-
-        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
-
-        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
-
-        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
-
-        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
     elif x == 'lt':
 
@@ -301,9 +278,9 @@ while(1):
 
         GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
 
-        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
 
-        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
 
         GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
 
@@ -379,9 +356,9 @@ while(1):
 
         GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
 
-        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
 
-        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
 
         GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
 
