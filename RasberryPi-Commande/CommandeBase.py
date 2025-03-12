@@ -4,9 +4,12 @@ import time
 # https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/
 
 
+
 import RPi.GPIO as GPIO
 
 from time import sleep
+
+
 
 moteurF_AVNT_DRT = 23
 
@@ -32,9 +35,9 @@ NSLEEP2 = 13
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(NSLEEP1, GPIO.OUT)
+GPIO.setup(NSLEEP1,GPIO.OUT)
 
-GPIO.setup(NSLEEP2, GPIO.OUT)
+GPIO.setup(NSLEEP2,GPIO.OUT)
 
 GPIO.setup(moteurF_AVNT_DRT, GPIO.OUT)
 
@@ -54,9 +57,9 @@ GPIO.setup(moteurR_ARR_GCH, GPIO.OUT)
 
 GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)  # roue avant droite avance
 
-GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)  # roue avant gauche avance
+GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)	# roue avant gauche avance
 
-GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)  # roue avant droite recule
+GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)	# roue avant droite recule
 
 GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)  # roue avant gauche recule
 
@@ -68,9 +71,9 @@ GPIO.output(moteurF_ARR_GCH, GPIO.LOW)  # roue arriere gauche avance
 
 GPIO.output(moteurR_ARR_GCH, GPIO.LOW)  # roue arriere gauche recule
 
-p1 = GPIO.PWM(NSLEEP1, 1000)
+p1=GPIO.PWM(NSLEEP1,1000)
 
-p2 = GPIO.PWM(NSLEEP2, 1000)
+p2=GPIO.PWM(NSLEEP2,1000)
 
 p1.start(5)
 
@@ -84,7 +87,11 @@ print("r-run s-stop f-forward b-backward l-low m-medium h-high lt-lefttranslatio
 
 print("\n")
 
-while (1):
+
+
+while(1):
+
+
 
     x = input()
     def arret():
@@ -282,7 +289,7 @@ while (1):
 
         x = 'z'
 
-
+        
 
     elif x == 'rd':
 
@@ -308,7 +315,7 @@ while (1):
 
         x = 'z'
 
-
+        
 
     elif x == 'ld':
 
@@ -334,7 +341,7 @@ while (1):
 
         x = 'z'
 
-
+        
 
     elif x == 'ldb':
 
@@ -358,9 +365,9 @@ while (1):
 
         temp1 = 0
 
-        x = 'z'
+        x = 'z'     
 
-
+    
 
     elif x == 'rdb':
 
@@ -386,9 +393,9 @@ while (1):
 
         x = 'z'
 
+        
 
-
-    elif x == 'l':
+    elif x=='l':
 
         print("low")
 
@@ -396,11 +403,11 @@ while (1):
 
         p2.ChangeDutyCycle(25)
 
-        x = 'z'
+        x='z'
 
+        
 
-
-    elif x == 'm':
+    elif x=='m':
 
         print("medium")
 
@@ -408,11 +415,11 @@ while (1):
 
         p2.ChangeDutyCycle(50)
 
-        x = 'z'
+        x='z'
 
+        
 
-
-    elif x == 'h':
+    elif x=='h':
 
         print("high")
 
@@ -420,8 +427,9 @@ while (1):
 
         p2.ChangeDutyCycle(75)
 
-        x = 'z'
+        x='z'
 
+        
 
     elif x == 'e':
 
@@ -431,8 +439,172 @@ while (1):
 
         break
 
+
+
     else:
 
         print("<<<  wrong data  >>>")
 
         print("please enter the defined data to continue.....")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
