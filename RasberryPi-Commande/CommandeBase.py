@@ -17,7 +17,7 @@ moteurR_AVNT_DRT = 24
 
 moteurF_AVNT_GCH = 25
 
-moteurR_AVNT_GCH = 18
+moteurR_AVNT_GCH = 5
 
 moteurF_ARR_DRT = 4
 
@@ -29,15 +29,23 @@ moteurR_ARR_GCH = 22
 
 temp1 = 1
 
-NSLEEP1 = 12
+NSLEEP1 = 18
 
 NSLEEP2 = 13
+
+NSLEEP3 = 12
+
+NSLEEP4 = 19
 
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(NSLEEP1,GPIO.OUT)
 
 GPIO.setup(NSLEEP2,GPIO.OUT)
+
+GPIO.setup(NSLEEP3,GPIO.OUT)
+
+GPIO.setup(NSLEEP4,GPIO.OUT)
 
 GPIO.setup(moteurF_AVNT_DRT, GPIO.OUT)
 
@@ -75,9 +83,17 @@ p1=GPIO.PWM(NSLEEP1,1000)
 
 p2=GPIO.PWM(NSLEEP2,1000)
 
-p1.start(5)
+p3=GPIO.PWM(NSLEEP3,1000)
 
-p2.start(5)
+p4=GPIO.PWM(NSLEEP4,1000)
+
+p1.start(25)
+
+p2.start(25)
+
+p3.start(25)
+
+p4.start(25)
 
 print("\n")
 
@@ -115,13 +131,13 @@ while(1):
 
             GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
 
-            GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
 
             GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
 
-            GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
 
-            GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
+            GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
 
             GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
 
@@ -130,8 +146,8 @@ while(1):
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
             print("forward")
-            sleep(2)
-            arret()
+            #sleep(2)
+            #arret()
             x = 'z'
 
 
@@ -402,6 +418,9 @@ while(1):
         p1.ChangeDutyCycle(25)
 
         p2.ChangeDutyCycle(25)
+        p3.ChangeDutyCycle(25)
+
+        p4.ChangeDutyCycle(25)
 
         x='z'
 
@@ -414,6 +433,10 @@ while(1):
         p1.ChangeDutyCycle(50)
 
         p2.ChangeDutyCycle(50)
+        
+        p3.ChangeDutyCycle(50)
+
+        p4.ChangeDutyCycle(50)
 
         x='z'
 
@@ -426,6 +449,9 @@ while(1):
         p1.ChangeDutyCycle(75)
 
         p2.ChangeDutyCycle(75)
+        p3.ChangeDutyCycle(75)
+
+        p4.ChangeDutyCycle(75)
 
         x='z'
 
