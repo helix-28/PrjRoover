@@ -1,4 +1,5 @@
 # Python Script
+import time
 
 # https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/
 
@@ -119,8 +120,9 @@ while(1):
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
             print("forward")
-
+            time.sleep(2)
             x = 'z'
+
 
         else:
 
