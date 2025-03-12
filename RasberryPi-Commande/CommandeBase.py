@@ -1,4 +1,5 @@
 # Python Script
+import time
 
 # https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/
 
@@ -110,8 +111,9 @@ while (1):
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
             print("forward")
-
+            time.sleep(2)
             x = 'z'
+
 
         else:
 
@@ -135,7 +137,27 @@ while (1):
 
             x = 'z'
 
+    elif x == 'tr':
+        print("turn right")
+        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+        GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
+        GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
+        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
+    elif x == 'tl':
+        print("turn left")
+        GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
+        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
+        GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+        GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
     elif x == 's':
 
         print("stop")
