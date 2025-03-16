@@ -497,7 +497,7 @@ def direction_mecanum(vitesse, angle):
     if v_AVNT_GCH > 0 :
         GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
         GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
-    elif v_AVNT_DRT < 0 :
+    elif v_AVNT_GCH < 0 :
         GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
         GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
     else :
@@ -506,10 +506,10 @@ def direction_mecanum(vitesse, angle):
     
     p2.ChangeDutyCycle(v_AVNT_GCH)
 
-    if v_AVNT_DRT > 0 :
+    if v_ARR_DRT > 0 :
         GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
         GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
-    elif v_AVNT_DRT < 0 :
+    elif v_ARR_DRT < 0 :
         GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
         GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
     else :
@@ -518,10 +518,10 @@ def direction_mecanum(vitesse, angle):
     
     p3.ChangeDutyCycle(v_ARR_DRT)
 
-    if v_AVNT_DRT > 0 :
+    if v_ARR_GCH > 0 :
         GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
         GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-    elif v_AVNT_DRT < 0 :
+    elif v_ARR_GCH < 0 :
         GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
         GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
     else :
