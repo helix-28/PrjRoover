@@ -1,6 +1,6 @@
 # Python Script
 import time
-
+import math
 # https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/
 
 
@@ -473,164 +473,59 @@ while(1):
 
         print("please enter the defined data to continue.....")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def direction_mecanum(vitesse, angle):
+    vx = vitesse * math.cos(angle)
+    vy = vitesse * math.sin(angle)
+    
+    v_AVNT_DRT = vx + vy
+    v_AVNT_GCH = vx - vy
+    v_ARR_DRT = vx - vy
+    v_ARR_GCH = vx +vy
+
+    if v_AVNT_DRT > 0 :
+        GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+    elif v_AVNT_DRT < 0 :
+        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+    else :
+        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+    
+    p1.ChangeDutyCycle(v_AVNT_DRT)
+
+    if v_AVNT_GCH > 0 :
+        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+        GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+    elif v_AVNT_DRT < 0 :
+        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
+    else :
+        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+        GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+    
+    p2.ChangeDutyCycle(v_AVNT_GCH)
+
+    if v_AVNT_DRT > 0 :
+        GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
+        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+    elif v_AVNT_DRT < 0 :
+        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+        GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
+    else :
+        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+    
+    p3.ChangeDutyCycle(v_ARR_DRT)
+
+    if v_AVNT_DRT > 0 :
+        GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
+        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
+    elif v_AVNT_DRT < 0 :
+        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+        GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
+    else :
+        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
+    
+    p4.ChangeDutyCycle(v_ARR_GCH)
