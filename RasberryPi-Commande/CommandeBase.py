@@ -474,8 +474,8 @@ while(1):
         print("please enter the defined data to continue.....")
 
 def direction_mecanum(vitesse, angle):
-    vx = vitesse * math.cos(angle)
-    vy = vitesse * math.sin(angle)
+    vx = vitesse * math.cos(radians(angle))
+    vy = vitesse * math.sin(radians(angle))
     
     v_AVNT_DRT = vx + vy
     v_AVNT_GCH = vx - vy
