@@ -123,6 +123,64 @@ while(1):
         GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
 
+    def direction_mecanum(vitesse, angle):
+        vx = vitesse * math.cos(math.radians(angle))
+        vy = vitesse * math.sin(math.radians(angle))
+
+        v_AVNT_DRT = vx + vy
+        v_AVNT_GCH = vx - vy
+        v_ARR_DRT = vx - vy
+        v_ARR_GCH = vx + vy
+
+        if v_AVNT_DRT > 0:
+            GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+        elif v_AVNT_DRT < 0:
+            GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+        else:
+            GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+
+        p1.ChangeDutyCycle(v_AVNT_DRT)
+
+        if v_AVNT_GCH > 0:
+            GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+        elif v_AVNT_GCH < 0:
+            GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
+        else:
+            GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+
+        p2.ChangeDutyCycle(v_AVNT_GCH)
+
+        if v_ARR_DRT > 0:
+            GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
+            GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+        elif v_ARR_DRT < 0:
+            GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+            GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
+        else:
+            GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+            GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+
+        p3.ChangeDutyCycle(v_ARR_DRT)
+
+        if v_ARR_GCH > 0:
+            GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
+            GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
+        elif v_ARR_GCH < 0:
+            GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+            GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
+        else:
+            GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+            GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
+
+        p4.ChangeDutyCycle(v_ARR_GCH)
+
+
     if x == 'r':
 
         print("run")
@@ -465,6 +523,15 @@ while(1):
 
         break
 
+    elif x == 'test':
+        angle = int(input("Entrez l'angle: "))
+        vitesse = float(input("Entrez la vitesse: "))
+        print("angle: "+angle)
+        print("vitesse:"+vitesse)
+        direction_mecanum(vitesse,angle)
+
+        break
+
 
 
     else:
@@ -473,59 +540,3 @@ while(1):
 
         print("please enter the defined data to continue.....")
 
-def direction_mecanum(vitesse, angle):
-    vx = vitesse * math.cos(radians(angle))
-    vy = vitesse * math.sin(radians(angle))
-    
-    v_AVNT_DRT = vx + vy
-    v_AVNT_GCH = vx - vy
-    v_ARR_DRT = vx - vy
-    v_ARR_GCH = vx +vy
-
-    if v_AVNT_DRT > 0 :
-        GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
-        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
-    elif v_AVNT_DRT < 0 :
-        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
-        GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
-    else :
-        GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
-        GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
-    
-    p1.ChangeDutyCycle(v_AVNT_DRT)
-
-    if v_AVNT_GCH > 0 :
-        GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
-        GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
-    elif v_AVNT_GCH < 0 :
-        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
-        GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
-    else :
-        GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
-        GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
-    
-    p2.ChangeDutyCycle(v_AVNT_GCH)
-
-    if v_ARR_DRT > 0 :
-        GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
-        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
-    elif v_ARR_DRT < 0 :
-        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
-        GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
-    else :
-        GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
-        GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
-    
-    p3.ChangeDutyCycle(v_ARR_DRT)
-
-    if v_ARR_GCH > 0 :
-        GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
-        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-    elif v_ARR_GCH < 0 :
-        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
-        GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
-    else :
-        GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
-        GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-    
-    p4.ChangeDutyCycle(v_ARR_GCH)
