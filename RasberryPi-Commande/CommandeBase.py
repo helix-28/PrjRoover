@@ -106,9 +106,6 @@ print("\n")
 
 
 while (1):
-
-
-
     x = input()
     def arret():
 
@@ -121,8 +118,6 @@ while (1):
         GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
         GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
         GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-
-
     def direction_mecanum(vitesse, angle):
         vx = vitesse * math.cos(math.radians(angle))
         vy = vitesse * math.sin(math.radians(angle))
@@ -179,8 +174,6 @@ while (1):
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
         p3.ChangeDutyCycle(v_ARR_GCH)
-
-
     if x == 'r':
 
         print("run")
@@ -230,7 +223,6 @@ while (1):
             print("backward")
 
             x = 'z'
-
     elif x == 'tr':
         print("turn right")
         GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
@@ -241,7 +233,6 @@ while (1):
         GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
         GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
         GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
-
     elif x == 'tl':
         print("turn left")
         GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
@@ -259,9 +250,6 @@ while (1):
         arret()
 
         x = 'z'
-
-
-
     elif x == 'f':
 
         print("forward")
@@ -285,9 +273,6 @@ while (1):
         temp1 = 1
 
         x = 'z'
-
-
-
     elif x == 'b':
 
         print("backward")
@@ -311,9 +296,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-
-
     elif x == 'rt':
 
         print("right translation")
@@ -337,8 +319,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-
     elif x == 'lt':
 
         print("left translation")
@@ -362,9 +342,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-        
-
     elif x == 'rd':
 
         print("right diagonale")
@@ -388,9 +365,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-        
-
     elif x == 'ld':
 
         print("left diagonale")
@@ -414,9 +388,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-        
-
     elif x == 'ldb':
 
         print("left diagonale backward")
@@ -439,10 +410,7 @@ while (1):
 
         temp1 = 0
 
-        x = 'z'     
-
-    
-
+        x = 'z'
     elif x == 'rdb':
 
         print("right diagonale backward")
@@ -466,9 +434,6 @@ while (1):
         temp1 = 0
 
         x = 'z'
-
-        
-
     elif x=='l':
 
         print("low")
@@ -481,9 +446,6 @@ while (1):
         p4.ChangeDutyCycle(25)
 
         x='z'
-
-        
-
     elif x=='m':
 
         print("medium")
@@ -497,9 +459,6 @@ while (1):
         p4.ChangeDutyCycle(50)
 
         x='z'
-
-        
-
     elif x=='h':
 
         print("high")
@@ -512,9 +471,6 @@ while (1):
         p4.ChangeDutyCycle(75)
 
         x='z'
-
-        
-
     elif x == 'e':
 
         GPIO.cleanup()
@@ -522,18 +478,14 @@ while (1):
         print("GPIO Clean up")
 
         break
-
     elif x == 'test':
         angle = int(input("Entrez l'angle: "))
         vitesse = float(input("Entrez la vitesse: "))
-        print("angle: "+angle)
-        print("vitesse:"+vitesse)
+        print("angle: ", angle)
+        print("vitesse:", vitesse)
         direction_mecanum(vitesse,angle)
 
         break
-
-
-
     else:
 
         print("<<<  wrong data  >>>")
