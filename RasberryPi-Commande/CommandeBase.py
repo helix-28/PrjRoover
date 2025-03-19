@@ -166,7 +166,7 @@ while(1):
             GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
             GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
 
-        p3.ChangeDutyCycle(v_ARR_DRT)
+        p4.ChangeDutyCycle(v_ARR_DRT)
 
         if v_ARR_GCH > 0:
             GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
@@ -178,7 +178,7 @@ while(1):
             GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
-        p4.ChangeDutyCycle(v_ARR_GCH)
+        p3.ChangeDutyCycle(v_ARR_GCH)
 
 
     if x == 'r':
