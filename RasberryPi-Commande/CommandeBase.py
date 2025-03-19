@@ -535,11 +535,12 @@ while (1):
     elif x == 'test':
         angle = int(input("Entrez l'angle: "))
         vitesse = float(input("Entrez la vitesse: "))
-        print("angle: "+angle)
-        print("vitesse:"+vitesse)
+        print("angle: ", angle)
+        print("vitesse:", vitesse)
         direction_mecanum(vitesse,angle)
-
-        break
+        sleep(1)
+        arret()
+    
 
 
 
