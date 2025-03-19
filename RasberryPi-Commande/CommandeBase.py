@@ -132,13 +132,13 @@ while (1):
         v_ARR_DRT = vx - vy
         v_ARR_GCH = vx + vy
 
-        max = max(abs(v_AVNT_DRT),abs(v_AVNT_GCH) , abs(v_ARR_GCH), abs(v_ARR_DRT))
+        maximum = max(abs(v_AVNT_DRT),abs(v_AVNT_GCH) , abs(v_ARR_GCH), abs(v_ARR_DRT))
 
-        if max > 100 :
-            v_ARR_DRT = v_ARR_DRT/max
-            v_ARR_GCH = v_AVNT_GCH/max
-            v_AVNT_DRT = v_AVNT_DRT/max
-            v_AVNT_GCH = v_AVNT_GCH/max
+        if maximum > 100 :
+            v_ARR_DRT = v_ARR_DRT/maximum*100
+            v_ARR_GCH = v_ARR_GCH/maximum*100
+            v_AVNT_DRT = v_AVNT_DRT/maximum*100
+            v_AVNT_GCH = v_AVNT_GCH/maximum*100
 
 
         if v_AVNT_DRT > 0:
@@ -500,7 +500,7 @@ while (1):
         print("angle: ", angle)
         print("vitesse:", vitesse)
         direction_mecanum(vitesse,angle)
-        sleep(1)
+        sleep(1.5)
         arret()
 
 
