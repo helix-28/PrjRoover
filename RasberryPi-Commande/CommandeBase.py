@@ -105,7 +105,7 @@ print("\n")
 
 
 
-while (1):
+while (True):
 
 
 
@@ -189,6 +189,30 @@ while (1):
 
         p3.ChangeDutyCycle(abs(v_ARR_GCH))
 
+    def rotation(vitesse, horaire):
+        if (horaire) :
+            GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
+            GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.HIGH)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
+            GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
+            GPIO.output(moteurR_ARR_DRT, GPIO.HIGH)
+            GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
+            GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
+        else :
+            GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
+            GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
+            GPIO.output(moteurR_AVNT_GCH, GPIO.HIGH)
+            GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
+            GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
+            GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
+            GPIO.output(moteurR_ARR_GCH, GPIO.HIGH)
+
+        p1.ChangeDutyCycle(abs(vitesse))
+        p2.ChangeDutyCycle(abs(vitesse))
+        p3.ChangeDutyCycle(abs(vitesse))
+        p4.ChangeDutyCycle(abs(vitesse))
 
     if x == 'r':
 
