@@ -132,6 +132,15 @@ while (1):
         v_ARR_DRT = vx - vy
         v_ARR_GCH = vx + vy
 
+        max = max(abs(v_AVNT_DRT),abs(v_AVNT_GCH) , abs(v_ARR_GCH), abs(v_ARR_DRT))
+
+        if max > 100 :
+            v_ARR_DRT = v_ARR_DRT/max
+            v_ARR_GCH = v_AVNT_GCH/max
+            v_AVNT_DRT = v_AVNT_DRT/max
+            v_AVNT_GCH = v_AVNT_GCH/max
+
+
         if v_AVNT_DRT > 0:
             GPIO.output(moteurF_AVNT_DRT, GPIO.HIGH)
             GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
@@ -142,7 +151,7 @@ while (1):
             GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
             GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
 
-        p1.ChangeDutyCycle(v_AVNT_DRT)
+        p1.ChangeDutyCycle(abs(v_AVNT_DRT))
 
         if v_AVNT_GCH > 0:
             GPIO.output(moteurF_AVNT_GCH, GPIO.HIGH)
@@ -154,7 +163,7 @@ while (1):
             GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
             GPIO.output(moteurR_AVNT_GCH, GPIO.LOW)
 
-        p2.ChangeDutyCycle(v_AVNT_GCH)
+        p2.ChangeDutyCycle(abs(v_AVNT_GCH))
 
         if v_ARR_DRT > 0:
             GPIO.output(moteurF_ARR_DRT, GPIO.HIGH)
@@ -166,7 +175,7 @@ while (1):
             GPIO.output(moteurF_ARR_DRT, GPIO.LOW)
             GPIO.output(moteurR_ARR_DRT, GPIO.LOW)
 
-        p4.ChangeDutyCycle(v_ARR_DRT)
+        p4.ChangeDutyCycle(abs(v_ARR_DRT))
 
         if v_ARR_GCH > 0:
             GPIO.output(moteurF_ARR_GCH, GPIO.HIGH)
@@ -178,7 +187,7 @@ while (1):
             GPIO.output(moteurF_ARR_GCH, GPIO.LOW)
             GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
-        p3.ChangeDutyCycle(v_ARR_GCH)
+        p3.ChangeDutyCycle(abs(v_ARR_GCH))
 
 
     if x == 'r':
