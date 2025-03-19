@@ -484,8 +484,12 @@ while (1):
         print("angle: ", angle)
         print("vitesse:", vitesse)
         direction_mecanum(vitesse,angle)
+        sleep(1)
+        arret()
 
-        break
+
+
+
     else:
 
         print("<<<  wrong data  >>>")
