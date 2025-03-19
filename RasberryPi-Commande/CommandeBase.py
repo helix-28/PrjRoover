@@ -524,6 +524,15 @@ while True:
         direction_mecanum(vitesse,angle)
         sleep(1.5)
         arret()
+    elif x == 'manette' :
+        xboxController = XboxController()
+
+        xboxController.read(self)
+
+        angleManette = math.arctan(xboxController.LeftJoystickY/xboxController.LeftJoystickX)
+        vitesseManette = math.sqrt(xboxController.LeftJoystickX**2 + xboxController.LeftJoystickY**2)
+
+        direction_mecanum(vitesseManette,angleManette)
 
 
 

@@ -37,10 +37,9 @@ class XboxController(object):
     def read(self): # return the buttons/triggers that you care about in this methode
         x = self.LeftJoystickX
         y = self.LeftJoystickY
-        a = self.A
-        b = self.X # b=1, x=2
-        rb = self.RightBumper
-        return [x, y, a, b, rb]
+        rot = self.RightJoystickX
+
+        return [x, y, rot]
 
 
     def _monitor_controller(self):
