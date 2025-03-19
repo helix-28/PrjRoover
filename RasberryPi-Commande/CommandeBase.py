@@ -97,22 +97,20 @@ p4.start(25)
 
 print("\n")
 
-print("The default speed & direction of motor is LOW & Forward.....")
-
 print("r-run s-stop f-forward b-backward l-low m-medium h-high lt-lefttranslation rt-righttranslation e-exit")
 
 print("\n")
 
 
 
-while (True):
+while True:
 
 
 
     x = input()
     def arret():
 
-        # Arrêt du robot après 2 secondes
+        # Arrêt du robot
         GPIO.output(moteurF_AVNT_DRT, GPIO.LOW)
         GPIO.output(moteurR_AVNT_DRT, GPIO.LOW)
         GPIO.output(moteurF_AVNT_GCH, GPIO.LOW)
