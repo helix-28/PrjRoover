@@ -232,7 +232,7 @@ while True:
         def read(self):
             """Read the state of the Xbox controller"""
             if not self.joystick:
-                return [0, 0, 0, 0, 0]
+                return [0, 0, 0]
 
             # Get the joystick values (assuming axes 0 and 1 are for the left stick, 2 and 3 for the right stick)
             left_x = self.joystick.get_axis(0)  # Left stick horizontal (X)
