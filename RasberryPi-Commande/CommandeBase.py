@@ -536,10 +536,15 @@ while True:
         else :
             angleManette = 180
 
-        vitesseManette = math.sqrt(xboxController.LeftJoystickX**2 + xboxController.LeftJoystickY**2)
+        vitesseManette = math.sqrt(xboxController.LeftJoystickX**2 + xboxController.LeftJoystickY**2) * 100
 
         direction_mecanum(vitesseManette,angleManette)
 
+        horaire = false
+        if XboxController.RightJoystickX >= 0 :
+            horaire = true
+
+        rotation(abs(XboxController.RightJoystickX) * 100, horaire)
 
 
 
