@@ -127,14 +127,14 @@ while True:
         GPIO.output(moteurR_ARR_GCH, GPIO.LOW)
 
 
-    def direction_mecanum(vitesse, angle):
+    def direction_mecanum(vitesse, angle, rotation):
         vx = vitesse * math.cos(math.radians(angle))
         vy = vitesse * math.sin(math.radians(angle))
 
-        v_AVNT_DRT = vx + vy
-        v_AVNT_GCH = vx - vy
-        v_ARR_DRT = vx - vy
-        v_ARR_GCH = vx + vy
+        v_AVNT_DRT = vx + vy + rotation
+        v_AVNT_GCH = vx - vy - rotation
+        v_ARR_DRT = vx - vy + rotation
+        v_ARR_GCH = vx + vy - rotation
 
         maximum = max(abs(v_AVNT_DRT),abs(v_AVNT_GCH) , abs(v_ARR_GCH), abs(v_ARR_DRT))
 
@@ -256,7 +256,7 @@ while True:
                 vitesseManette = 0
                 angleManette = 0
 
-            direction_mecanum(vitesseManette, angleManette+180)
+            direction_mecanum(vitesseManette, angleManette+180, right_x*100)
 
 
             horaire = False
