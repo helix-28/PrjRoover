@@ -312,29 +312,64 @@ while True:
             self.joystick.init()
 
             print(f"Controller detected: {self.joystick.get_name()}")
-            print(f"Number of axes: {self.joystick.get_numaxes()}")
-            print(f"Number of buttons: {self.joystick.get_numbuttons()}")
-            print(f"Number of hats: {self.joystick.get_numhats()}")
 
-            self.movement = "Stopped"
+        def read(self):
+            """Read the state of the Xbox controller"""
+            if not self.joystick:
+                return [0, 0, 0, 0, 0]
+
+            # Get the joystick values (assuming axes 0 and 1 are for the left stick, 2 and 3 for the right stick)
+            left_x = self.joystick.get_axis(0)  # Left stick horizontal (X)
+            left_y = self.joystick.get_axis(1)  # Left stick vertical (Y)
+            right_x = self.joystick.get_axis(2)  # Right stick horizontal (X)
+            right_y = self.joystick.get_axis(3)  # Right stick vertical (Y)
+            z_axis = self.joystick.get_axis(4)  # Rotation (e.g., triggers or other axis)
+
+            # Return the joystick values as separate axes
+            return left_x, left_y, z_axis, right_x, right_y
+
+
+    class RobotControl:
+        def __init__(self):
+            self.controller = XboxController()
+
+        def rotation(self, vitesse, horaire):
+            # Simulate rotation logic (clockwise or counterclockwise)
+            direction = "Clockwise" if horaire else "Counterclockwise"
+            print(f"Rotating {direction} with speed: {vitesse}")
 
         def handle_events(self):
-            for event in pygame.event.get():
-                if event.type == pygame.JOYBUTTONDOWN:
-                    if event.button == 3:  # Y button
-                        direction_mecanum(50,0)
-                    elif event.button == 0:  # A button
-                        direction_mecanum(50,180)
+            # Get the current state of the Xbox controller
+            left_x, left_y, z_axis, right_x, right_y = self.controller.read()
 
-                elif event.type == pygame.JOYBUTTONUP:
-                    if event.button in [3, 0]:  # Y or A released
-                        direction_mecanum(50,180)
+            # Left joystick input handling for mecanum drive
+            if left_x != 0 or left_y != 0:  # Handle left joystick movement
+                angleManette = math.degrees(math.atan2(left_y, left_x))  # atan2 to handle correct quadrants
+                vitesseManette = math.sqrt(left_x ** 2 + left_y ** 2) * 100  # Magnitude for speed (scaled)
+                self.direction_mecanum(vitesseManette, angleManette)
+
+            # Right joystick (right_x) input handling for rotation
+            horaire = False
+            if right_x >= 0:  # Right joystick X (used for rotation direction)
+                horaire = True  # Clockwise rotation
+            self.rotation(abs(right_x) * 100, horaire)
+
+            # Handling the Z-axis rotation or triggers (optional)
+            if z_axis != 0:
+                print(f"Rotation Z-Axis: {z_axis}")
 
         def run(self):
             running = True
             while running:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        running = False  # Quit if the window is closed
+
+                # Handle joystick inputs and control the robot
                 self.handle_events()
-                print(f"Current Movement: {self.movement}")
+
+                pygame.time.wait(50)  # Small delay to reduce CPU usage
+
 
     if x == 'r':
 
