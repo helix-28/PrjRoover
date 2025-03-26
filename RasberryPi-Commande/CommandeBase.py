@@ -527,9 +527,15 @@ while True:
     elif x == 'manette' :
         xboxController = XboxController()
 
-        xboxController.read(self)
+        xboxController.read()
 
-        angleManette = math.arctan(xboxController.LeftJoystickY/xboxController.LeftJoystickX)
+        if xboxController.LeftJoystickX != 0 :
+            angleManette = math.arctan(xboxController.LeftJoystickY/xboxController.LeftJoystickX)
+        elif xboxController.LeftJoystickY >= 0 :
+            angleManette = 0
+        else :
+            angleManette = 180
+
         vitesseManette = math.sqrt(xboxController.LeftJoystickX**2 + xboxController.LeftJoystickY**2)
 
         direction_mecanum(vitesseManette,angleManette)
@@ -542,4 +548,3 @@ while True:
         print("<<<  wrong data  >>>")
 
         print("please enter the defined data to continue.....")
-
