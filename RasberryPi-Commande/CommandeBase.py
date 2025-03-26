@@ -306,7 +306,7 @@ while True:
         p4.ChangeDutyCycle(abs(vitesse))
 
 
-    class XboxController:
+    class Controller:
         def __init__(self):
             pygame.init()
             pygame.joystick.init()
