@@ -647,7 +647,7 @@ while True:
         print("<<<  wrong data  >>>")
 
         print("please enter the defined data to continue.....")
-class XboxController(threading.Thread):
+class XboxController1(threading.Thread):
     # internal ids for the xbox controls
     class XboxControls():
         LTHUMBX = 0
