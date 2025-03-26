@@ -1,8 +1,5 @@
 # Python Script
 import time
-from inputs import get_gamepad
-import math
-import threading
 import math
 import pygame
 from pygame.locals import *
@@ -313,6 +310,7 @@ while True:
 
             self.joystick = pygame.joystick.Joystick(0)
             self.joystick.init()
+
             print(f"Controller detected: {self.joystick.get_name()}")
 
         def read(self):
