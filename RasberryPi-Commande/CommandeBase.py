@@ -527,24 +527,24 @@ while True:
     elif x == 'manette' :
         xboxController = XboxController()
 
-        xboxController.read()
+        tab = xboxController.read()
 
-        if xboxController.LeftJoystickX != 0 :
-            angleManette = math.arctan(xboxController.LeftJoystickY/xboxController.LeftJoystickX)
-        elif xboxController.LeftJoystickY >= 0 :
+        if tab[0] != 0 :
+            angleManette = math.arctan(tab[1]/tab[0])
+        elif tab[1] >= 0 :
             angleManette = 0
         else :
             angleManette = 180
 
-        vitesseManette = math.sqrt(xboxController.LeftJoystickX**2 + xboxController.LeftJoystickY**2) * 100
+        vitesseManette = math.sqrt(tab[0]**2 + tab[1]**2) * 100
 
         direction_mecanum(vitesseManette,angleManette)
 
-        horaire = false
-        if XboxController.RightJoystickX >= 0 :
-            horaire = true
+        horaire = False
+        if tab[2] >= 0 :
+            horaire = True
 
-        rotation(abs(XboxController.RightJoystickX) * 100, horaire)
+        rotation(abs(tab[2]) * 100, horaire)
 
 
 
