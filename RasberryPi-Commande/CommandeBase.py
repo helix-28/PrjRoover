@@ -238,41 +238,31 @@ while True:
             left_x = self.joystick.get_axis(0)  # Left stick horizontal (X)
             left_y = self.joystick.get_axis(1)  # Left stick vertical (Y)
             right_x = self.joystick.get_axis(2)  # Right stick horizontal (X)
-            right_y = self.joystick.get_axis(3)  # Right stick vertical (Y)
-            z_axis = self.joystick.get_axis(4)  # Rotation (e.g., triggers or other axis)
+
 
             # Return the joystick values as separate axes
-            return left_x, left_y, z_axis, right_x, right_y
+            return left_x, left_y, right_x
 
 
     class RobotControl:
         def __init__(self):
-            self.controller = XboxController()
-
-        def rotation(self, vitesse, horaire):
-            # Simulate rotation logic (clockwise or counterclockwise)
-            direction = "Clockwise" if horaire else "Counterclockwise"
-            print(f"Rotating {direction} with speed: {vitesse}")
+            self.controller = Controller()
 
         def handle_events(self):
-            # Get the current state of the Xbox controller
-            left_x, left_y, z_axis, right_x, right_y = self.controller.read()
 
-            # Left joystick input handling for mecanum drive
-            if left_x != 0 or left_y != 0:  # Handle left joystick movement
-                angleManette = math.degrees(math.atan2(left_y, left_x))  # atan2 to handle correct quadrants
-                vitesseManette = math.sqrt(left_x ** 2 + left_y ** 2) * 100  # Magnitude for speed (scaled)
-                self.direction_mecanum(vitesseManette, angleManette)
+            left_x, left_y, right_x = self.controller.read()
 
-            # Right joystick (right_x) input handling for rotation
+            if left_x != 0 or left_y != 0:
+                angleManette = math.degrees(math.atan2(left_y, left_x))
+                vitesseManette = math.sqrt(left_x ** 2 + left_y ** 2) * 100
+                direction_mecanum(vitesseManette, angleManette)
+
+
             horaire = False
-            if right_x >= 0:  # Right joystick X (used for rotation direction)
-                horaire = True  # Clockwise rotation
-            self.rotation(abs(right_x) * 100, horaire)
+            if right_x >= 0:
+                horaire = True
+            rotation(abs(right_x) * 100, horaire)
 
-            # Handling the Z-axis rotation or triggers (optional)
-            if z_axis != 0:
-                print(f"Rotation Z-Axis: {z_axis}")
 
         def run(self):
             running = True
