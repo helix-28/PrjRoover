@@ -253,7 +253,7 @@ while True:
             left_x, left_y, right_x = self.controller.read()
 
             if left_x != 0 or left_y != 0:
-                angleManette = math.degrees(math.atan2(left_y, left_x))
+                angleManette = math.degrees(math.atan2(left_x, left_y))
                 vitesseManette = math.sqrt(left_x ** 2 + left_y ** 2) * 100
                 direction_mecanum(vitesseManette, angleManette)
 
