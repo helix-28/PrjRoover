@@ -236,7 +236,7 @@ while True:
 
             left_x = self.joystick.get_axis(0)  # Left stick horizontal (X)
             left_y = self.joystick.get_axis(1)  # Left stick vertical (Y)
-            right_x = self.joystick.get_axis(2)  # Right stick horizontal (X)
+            right_x = self.joystick.get_axis(3)  # Right stick horizontal (X)
 
             return left_x, left_y, right_x
 
@@ -256,7 +256,7 @@ while True:
                 vitesseManette = 0
                 angleManette = 0
 
-            direction_mecanum(vitesseManette, angleManette+180, right_x*100)
+            direction_mecanum(vitesseManette, angleManette+180, right_x*-100)
 
 
             horaire = False
