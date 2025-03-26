@@ -538,6 +538,7 @@ while True:
 
         vitesseManette = math.sqrt(tab[0]**2 + tab[1]**2) * 100
 
+        print(angleManette)
         direction_mecanum(vitesseManette,angleManette)
 
         horaire = False
