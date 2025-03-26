@@ -234,13 +234,10 @@ while True:
             if not self.joystick:
                 return [0, 0, 0]
 
-            # Get the joystick values (assuming axes 0 and 1 are for the left stick, 2 and 3 for the right stick)
             left_x = self.joystick.get_axis(0)  # Left stick horizontal (X)
             left_y = self.joystick.get_axis(1)  # Left stick vertical (Y)
             right_x = self.joystick.get_axis(2)  # Right stick horizontal (X)
 
-
-            # Return the joystick values as separate axes
             return left_x, left_y, right_x
 
 
@@ -259,13 +256,13 @@ while True:
                 vitesseManette = 0
                 angleManette = 0
 
-            direction_mecanum(vitesseManette, angleManette)
+            direction_mecanum(vitesseManette, angleManette+180)
 
 
             horaire = False
             if right_x >= 0:
                 horaire = True
-            rotation(abs(right_x) * 100, horaire)
+            #rotation(abs(right_x) * 100, horaire)
 
 
         def run(self):
