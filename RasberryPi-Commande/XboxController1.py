@@ -301,10 +301,14 @@ class XboxController(threading.Thread):
         self.running = False
 
     # updates a specific value in the control dictionary
+    # updates a specific value in the control dictionary
+    # updates a specific value in the control dictionary
     def updateControlValue(self, control, value):
         # if the value has changed update it and call the callbacks
         if self.controlValues[control] != value:
             self.controlValues[control] = value
+            action = "Pressed" if value == 1 else "Released"
+            print(f"Joystick Control {control}: {value} ({action})")  # Print for buttons and joysticks
             self.doCallBacks(control, value)
 
     # calls the call backs if necessary
