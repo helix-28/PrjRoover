@@ -1,8 +1,5 @@
 # Python Script
 import time
-from inputs import get_gamepad
-import math
-import threading
 import math
 import pygame
 from pygame.locals import *
@@ -327,7 +324,7 @@ while True:
                     if event.button == 3:  # Y button
                         direction_mecanum(50,0)
                     elif event.button == 0:  # A button
-                        self.movement = "Backward"
+                        direction_mecanum(50,180)
 
                 elif event.type == pygame.JOYBUTTONUP:
                     if event.button in [3, 0]:  # Y or A released
