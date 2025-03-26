@@ -710,8 +710,8 @@ while True:
         rotation(abs(tab[2]) * 100, horaire)
 
     elif x == "test2" :
-        xboxController = Controller()
-        xboxController.run()
+        robot_control = RobotControl()
+        robot_control.run()
 
 
     else:
