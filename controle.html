@@ -8,8 +8,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
+            background-color: white;
             color: white;
+        }
+        .image-wrapper {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
         }
 
         header, footer {
@@ -21,13 +26,12 @@
 
         main {
             display: flex;
-            height: calc(100vh - 140px); /* hauteur - header/footer */
+            height: calc(100vh - 140px);
         }
 
         #map {
             flex: 1;
             background-color: lightgray;
-            height: 100%;
         }
 
         .controller {
@@ -42,6 +46,7 @@
         #controller-container {
             position: relative;
             width: 500px;
+
         }
 
         #xbox-image {
@@ -57,13 +62,13 @@
             display: none;
         }
 
-        /* Position des boutons sur l’image */
-        #btn-a  { top: 185px; left: 385px; }
-        #btn-b  { top: 155px; left: 415px; }
-        #btn-x  { top: 155px; left: 355px; }
-        #btn-y  { top: 125px; left: 385px; }
-        #btn-lt { top: 25px; left: 90px; }
-        #btn-rt { top: 25px; left: 380px; }
+        /* Adapté à ton image */
+        #btn-a  { top: 94px; left: 336px; }
+        #btn-b  { top: 68px; left: 360px; }
+        #btn-x  { top: 68px; left: 307px; }
+        #btn-y  { top: 44px; left: 336px; }
+        #btn-lt { top: 20px;  left: 80px; }
+        #btn-rt { top: 20px;  left: 370px; }
     </style>
 </head>
 <body>
@@ -72,20 +77,24 @@
     </header>
 
     <main>
-        <!-- Carte à gauche -->
+        <!-- Carte -->
         <div id="map"></div>
 
-        <!-- Manette Xbox à droite -->
-        <div class="controller">
-            <div id="controller-container">
-                <img src="https://i.imgur.com/fYV7NoV.png" alt="Manette Xbox" id="xbox-image">
-                <div class="button-indicator" id="btn-a"></div>
-                <div class="button-indicator" id="btn-b"></div>
-                <div class="button-indicator" id="btn-x"></div>
-                <div class="button-indicator" id="btn-y"></div>
-                <div class="button-indicator" id="btn-lt"></div>
-                <div class="button-indicator" id="btn-rt"></div>
-            </div>
+        <!-- Manette Xbox -->
+        <div id="controller-container">
+    <div class="image-wrapper">
+        <img src="Screenshot 2025-04-09 134037.png" alt="Manette Xbox" id="xbox-image">
+    </div>
+            <div style="position:absolute; top:150px; left:360px; width:10px; height:10px; background:red;"></div>
+
+    <div class="button-indicator" id="btn-a"></div>
+    <div class="button-indicator" id="btn-b"></div>
+    <div class="button-indicator" id="btn-x"></div>
+    <div class="button-indicator" id="btn-y"></div>
+    <div class="button-indicator" id="btn-lt"></div>
+    <div class="button-indicator" id="btn-rt"></div>
+</div>
+
         </div>
     </main>
 
