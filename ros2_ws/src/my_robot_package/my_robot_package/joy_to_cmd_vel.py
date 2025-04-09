@@ -35,10 +35,18 @@ class JoystickToCmdVel(Node):
         droite_x = self.joystick.get_axis(3)  # joystick droit horizontal (X)
 
         # Calcul de la vitesse et de l'angle
-        vitesse = math.sqrt(gauche_x**2 + gauche_y**2) * 100  # échelle entre 0 et 100
+        vitesse = math.sqrt(gauche_x**2 + gauche_y**2)  # échelle entre 0 et 1
+        vitesse = min(vitesse, 1.0)  # Limiter la vitesse à 1.0
         angle = math.degrees(math.atan2(gauche_y, gauche_x))  # calcul de l'angle
-        rotation = droite_x * 100  # rotation gauche/droite sur joystick droit
+        rotation = droite_x  # rotation gauche/droite sur joystick droit
 
+        # Créer un message Twist pour la commande
+        cmd_vel = Twist()
+        cmd_vel.linear.x = vitesse * 1.0  # vitesse linéaire (scale entre -1.0 et 1.0)
+        cmd_vel.angular.z = rotation * 1.0  # rotation angulaire (scale entre -1.0 et 1.0)
+
+        # Publier sur le topic cmd_vel
+        self.publisher_.publish(cmd_vel)
 
         # Log pour débogage
         self.get_logger().info(f"Vitesse: {vitesse}, Angle: {angle}, Rotation: {rotation}")
@@ -53,5 +61,6 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
 
 
