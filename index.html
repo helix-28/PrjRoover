@@ -14,12 +14,21 @@
             padding: 15px 30px;
             font-size: 18px;
         }
+        img {
+            display: block;
+            margin: 50px auto 0 auto; /* espace au-dessus + centré */
+            width: 300px; /* ajuste selon ta préférence */
+        }
     </style>
 </head>
 <body>
     <h1>Bienvenue sur Roover Controller</h1>
     <p>Choisissez votre mode :</p>
-    <button onclick="location.href='controle.html'">Contrôle libre</button>
-    <button onclick="location.href='automatique.html'">Envoi automatique</button>
+    <div>
+        <button onclick="location.href='controle.html'">Contrôle libre</button>
+        <button onclick="location.href='automatique.html'">Envoi automatique</button>
+    </div>
+
+    <img src="Robot.PNG" alt="robot">
 </body>
 </html>
