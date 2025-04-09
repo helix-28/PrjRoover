@@ -11,11 +11,6 @@
             background-color: white;
             color: white;
         }
-        .image-wrapper {
-            background-color: white;
-            padding: 10px;
-            border-radius: 10px;
-        }
 
         header, footer {
             background-color: black;
@@ -46,7 +41,12 @@
         #controller-container {
             position: relative;
             width: 500px;
+        }
 
+        .image-wrapper {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
         }
 
         #xbox-image {
@@ -58,17 +58,22 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: rgba(0, 255, 0, 0.6);
             display: none;
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4);
         }
 
-        /* Adapté à ton image */
-        #btn-a  { top: 94px; left: 336px; }
-        #btn-b  { top: 68px; left: 360px; }
-        #btn-x  { top: 68px; left: 307px; }
-        #btn-y  { top: 44px; left: 336px; }
-        #btn-lt { top: 20px;  left: 80px; }
-        #btn-rt { top: 20px;  left: 370px; }
+        #btn-a  { top: 94px; left: 336px; background-color: limegreen; }
+        #btn-b  { top: 68px; left: 360px; background-color: red; }
+        #btn-x  { top: 68px; left: 307px; background-color: blue; }
+        #btn-y  { top: 44px; left: 336px; background-color: yellow; }
+        #btn-lt { top: 20px; left: 100px; background-color: lime; }
+        #btn-rt { top: 20px; left: 370px; background-color: lime; }
+
+        /* Joystick arrows */
+        .joystick-arrow {
+            position: absolute;
+
+        }
     </style>
 </head>
 <body>
@@ -81,20 +86,41 @@
         <div id="map"></div>
 
         <!-- Manette Xbox -->
-        <div id="controller-container">
-    <div class="image-wrapper">
-        <img src="Screenshot 2025-04-09 134037.png" alt="Manette Xbox" id="xbox-image">
-    </div>
-            <div style="position:absolute; top:150px; left:360px; width:10px; height:10px; background:red;"></div>
+        <div class="controller">
+            <div id="controller-container">
+                <div class="image-wrapper">
+                    <img src="Screenshot 2025-04-09 134037.png" alt="Manette Xbox" id="xbox-image">
+                </div>
 
-    <div class="button-indicator" id="btn-a"></div>
-    <div class="button-indicator" id="btn-b"></div>
-    <div class="button-indicator" id="btn-x"></div>
-    <div class="button-indicator" id="btn-y"></div>
-    <div class="button-indicator" id="btn-lt"></div>
-    <div class="button-indicator" id="btn-rt"></div>
-</div>
+                <!-- Boutons -->
+                <div class="button-indicator" id="btn-a"></div>
+                <div class="button-indicator" id="btn-b"></div>
+                <div class="button-indicator" id="btn-x"></div>
+                <div class="button-indicator" id="btn-y"></div>
+                <div class="button-indicator" id="btn-lt"></div>
+                <div class="button-indicator" id="btn-rt"></div>
 
+                <!-- Vecteurs joystick gauche -->
+<svg id="joystick-left" width="100" height="100" class="joystick-arrow" style="top: 33px; left: 100px;">
+    <defs>
+        <marker id="arrowhead-left" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+            <polygon points="0 0, 3 2, 0 4" fill="lime" />
+        </marker>
+    </defs>
+    <line x1="50" y1="50" x2="50" y2="50" stroke="lime" stroke-width="4" marker-end="url(#arrowhead-left)" />
+</svg>
+
+<!-- Vecteurs joystick droit -->
+<svg id="joystick-right" width="100" height="100" class="joystick-arrow" style="top: 92px; left: 252px;">
+    <defs>
+        <marker id="arrowhead-right" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+            <polygon points="0 0, 3 2, 0 4" fill="red" />
+        </marker>
+    </defs>
+    <line x1="50" y1="50" x2="50" y2="50" stroke="red" stroke-width="4" marker-end="url(#arrowhead-right)" />
+</svg>
+
+            </div>
         </div>
     </main>
 
@@ -115,17 +141,34 @@
         function updateGamepad() {
             const gamepads = navigator.getGamepads();
             const gp = gamepads[0];
+
             if (gp) {
+                // Boutons
                 Object.keys(buttonsMap).forEach(index => {
                     const btnId = buttonsMap[index];
                     const buttonEl = document.getElementById(btnId);
-                    if (gp.buttons[index].pressed) {
+                    if (gp.buttons[index]?.pressed) {
                         buttonEl.style.display = 'block';
                     } else {
                         buttonEl.style.display = 'none';
                     }
                 });
+
+                // Joysticks
+                const gx = gp.axes[0]; // gauche X
+                const gy = gp.axes[1]; // gauche Y
+                const dx = gp.axes[2]; // droit X
+                const dy = gp.axes[3]; // droit Y
+
+                const jl = document.querySelector("#joystick-left line");
+                jl.setAttribute("x2", 50 + gx * 40);
+                jl.setAttribute("y2", 50 + gy * 40);
+
+                const jr = document.querySelector("#joystick-right line");
+                jr.setAttribute("x2", 50 + dx * 40);
+                jr.setAttribute("y2", 50 + dy * 40);
             }
+
             requestAnimationFrame(updateGamepad);
         }
 
