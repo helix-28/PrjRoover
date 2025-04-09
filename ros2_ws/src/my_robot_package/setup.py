@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'joy_to_cmd_vel = my_robot_package.joy_to_cmd_vel:main', 
+            'cmd_vel_to_motors = my_robot_package.cmd_vel_to_motors:main',  # Add this line
         ],
     },
 )
-
