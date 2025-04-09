@@ -246,11 +246,6 @@ while True:
                 self.handle_events()
 
                 pygame.time.wait(50)  # Petit délai pour l'utilisation du CPU
-
-
-
-
-
     if x == 'e':
 
         GPIO.cleanup()
