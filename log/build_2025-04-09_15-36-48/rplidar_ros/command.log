@@ -1,0 +1,2 @@
+Invoking command in '/home/Roover/PrjRoover/build/rplidar_ros': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/Roover/PrjRoover/build/rplidar_ros -- -j4 -l4
+Invoked command in '/home/Roover/PrjRoover/build/rplidar_ros' returned '2': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/Roover/PrjRoover/build/rplidar_ros -- -j4 -l4
