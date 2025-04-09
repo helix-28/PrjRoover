@@ -1,0 +1,2 @@
+[console_scripts]
+joy_to_cmd_vel = my_robot_package.joy_to_cmd_vel:main
