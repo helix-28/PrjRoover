@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contrôle libre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        header, footer {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            height: calc(100vh - 140px); /* hauteur - header/footer */
+        }
+
+        #map {
+            flex: 1;
+            background-color: lightgray;
+            height: 100%;
+        }
+
+        .controller {
+            flex: 1;
+            background-color: #2c2c2c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #controller-container {
+            position: relative;
+            width: 500px;
+        }
+
+        #xbox-image {
+            width: 100%;
+        }
+
+        .button-indicator {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(0, 255, 0, 0.6);
+            display: none;
+        }
+
+        /* Position des boutons sur l’image */
+        #btn-a  { top: 185px; left: 385px; }
+        #btn-b  { top: 155px; left: 415px; }
+        #btn-x  { top: 155px; left: 355px; }
+        #btn-y  { top: 125px; left: 385px; }
+        #btn-lt { top: 25px; left: 90px; }
+        #btn-rt { top: 25px; left: 380px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mode : Contrôle libre</h1>
+    </header>
+
+    <main>
+        <!-- Carte à gauche -->
+        <div id="map"></div>
+
+        <!-- Manette Xbox à droite -->
+        <div class="controller">
+            <div id="controller-container">
+                <img src="https://i.imgur.com/fYV7NoV.png" alt="Manette Xbox" id="xbox-image">
+                <div class="button-indicator" id="btn-a"></div>
+                <div class="button-indicator" id="btn-b"></div>
+                <div class="button-indicator" id="btn-x"></div>
+                <div class="button-indicator" id="btn-y"></div>
+                <div class="button-indicator" id="btn-lt"></div>
+                <div class="button-indicator" id="btn-rt"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;2025 Bois-de-Boulogne</p>
+    </footer>
+
+    <script>
+        const buttonsMap = {
+            0: 'btn-a',
+            1: 'btn-b',
+            2: 'btn-x',
+            3: 'btn-y',
+            6: 'btn-lt',
+            7: 'btn-rt'
+        };
+
+        function updateGamepad() {
+            const gamepads = navigator.getGamepads();
+            const gp = gamepads[0];
+            if (gp) {
+                Object.keys(buttonsMap).forEach(index => {
+                    const btnId = buttonsMap[index];
+                    const buttonEl = document.getElementById(btnId);
+                    if (gp.buttons[index].pressed) {
+                        buttonEl.style.display = 'block';
+                    } else {
+                        buttonEl.style.display = 'none';
+                    }
+                });
+            }
+            requestAnimationFrame(updateGamepad);
+        }
+
+        window.addEventListener("gamepadconnected", () => {
+            console.log("Manette connectée !");
+            updateGamepad();
+        });
+    </script>
+</body>
+</html>
