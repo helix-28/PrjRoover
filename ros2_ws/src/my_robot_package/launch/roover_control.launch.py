@@ -1,6 +1,6 @@
 import launch
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, LogInfo
+from launch.actions import DeclareLaunchArgument, LogInfo, ExecuteProcess
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
@@ -18,11 +18,10 @@ def generate_launch_description():
             parameters=[{'robot_mode': LaunchConfiguration('robot_mode')}]
         ),
 
-        # Lancer cmd_vel_to_motors pour envoyer les commandes au moteur
-        Node(
-            package='my_robot_package',  # Remplace avec ton nom de package
-            executable='cmd_vel_to_motors',  # Le script qui contrôle les moteurs
-            name='cmd_vel_to_motors_node',
-            output='screen',
+        # Lancer cmd_vel_to_motors avec sudo pour donner l'accès GPIO
+        ExecuteProcess(
+            cmd=["sudo", "ros2", "run", "my_robot_package", "cmd_vel_to_motors"],
+            output="screen",
         ),
     ])
+
