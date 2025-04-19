@@ -1,0 +1,35 @@
+# Paramètres généraux de slam_toolbox
+slam_toolbox:
+  ros__parameters:
+    # Paramètres pour la cartographie en ligne
+    mode: "online_async"  # Mode de cartographie en ligne (online ou offline)
+    
+    # Paramètres du LiDAR
+    laser_scan_topic: "/scan"  # Le topic où les données LiDAR sont publiées
+
+    # Paramètres de la qualité des scans
+    max_laser_range: 12.0  # Plage maximale du LiDAR en mètres
+    min_laser_range: 0.1   # Plage minimale du LiDAR en mètres
+    angle_min: -3.14159    # Angle minimum du LiDAR (en radians)
+    angle_max: 3.14159     # Angle maximum du LiDAR (en radians)
+    angle_increment: 0.0043633  # Incrément de l'angle entre chaque point du scan (en radians)
+    scan_time: 0.1         # Temps de capture des scans en secondes
+
+    # Paramètres de la carte
+    map_frame: "map"  # Frame de la carte
+    odom_frame: "odom"  # Frame de l'odométrie
+    base_frame: "base_link"  # Frame de base du robot
+    odom_lookup_transform_timeout: 1.0  # Timeout pour obtenir la transformée entre odom et base_link
+    
+    # Paramètres de l'algorithme de cartographie (paramètres SLAM)
+    resolution: 0.05  # Résolution de la carte (en mètres par pixel)
+    free_cell_threshold: 0.25  # Seuil de probabilité pour définir une cellule comme libre
+    occupied_cell_threshold: 0.65  # Seuil de probabilité pour définir une cellule comme occupée
+
+    # Paramètres de mise à jour de la carte
+    map_update_interval: 5.0  # Intervalle en secondes pour mettre à jour la carte
+
+    # Paramètres de filtrage
+    filter_min_score: 0.3  # Score minimum pour le filtrage des points
+    filter_max_score: 0.7  # Score maximum pour le filtrage des points
+
