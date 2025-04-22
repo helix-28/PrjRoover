@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: odom-publisher
+Version: 0.0.1
+Summary: A simple odom publisher to publish odom transform from cmd_vel
+Author: Your Name
+Author-email: your_email@example.com
+Maintainer: Your Name
+Maintainer-email: your_email@example.com
+License: License type (e.g., MIT)

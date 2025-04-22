@@ -1,0 +1,18 @@
+[0.818s] Invoking command in '/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/build --no-deps symlink_data
+[1.093s] running develop
+[1.253s] running egg_info
+[1.269s] writing my_robot_package.egg-info/PKG-INFO
+[1.269s] writing dependency_links to my_robot_package.egg-info/dependency_links.txt
+[1.269s] writing entry points to my_robot_package.egg-info/entry_points.txt
+[1.269s] writing requirements to my_robot_package.egg-info/requires.txt
+[1.269s] writing top-level names to my_robot_package.egg-info/top_level.txt
+[1.299s] reading manifest file 'my_robot_package.egg-info/SOURCES.txt'
+[1.301s] writing manifest file 'my_robot_package.egg-info/SOURCES.txt'
+[1.316s] running build_ext
+[1.316s] Creating /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my-robot-package.egg-link (link to .)
+[1.316s] Installing cmd_vel_to_motors script to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/my_robot_package
+[1.316s] Installing joy_to_cmd_vel script to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/my_robot_package
+[1.316s] 
+[1.317s] Installed /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package
+[1.317s] running symlink_data
+[1.351s] Invoked command in '/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/build --no-deps symlink_data
