@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    # Path to the RPLIDAR C1 launch file
+    # Get the path to the rplidar_c1_launch.py
     rplidar_launch_file = os.path.join(
         get_package_share_directory('rplidar_ros'),
         'launch',
@@ -15,7 +15,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        # Include the RPLIDAR launch with arguments
+        # RPLIDAR launch
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(rplidar_launch_file),
             launch_arguments={
@@ -24,7 +24,7 @@ def generate_launch_description():
             }.items()
         ),
 
-        # Your motor control node
+        # Motor control node
         Node(
             package='my_robot_package',
             executable='cmd_vel_to_motors',
