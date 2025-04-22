@@ -1,6 +1,7 @@
 package.xml
 setup.cfg
 setup.py
+launch/lidar_and_motor_launch.py
 launch/roover_control.launch.py
 launch/roover_slam.launch.py
 my_robot_package/__init__.py
