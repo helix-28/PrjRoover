@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/odom_publisher
+prepend-non-duplicate;PYTHONPATH;/home/Roover/PrjRoover/ros2_ws/build/odom_publisher
