@@ -23,8 +23,6 @@ function _colcon_prefix_chain_powershell_source_script {
 
 # source chained prefixes
 _colcon_prefix_chain_powershell_source_script "/opt/ros/jazzy\local_setup.ps1"
-_colcon_prefix_chain_powershell_source_script "/home/vikmo/PrjRoover/ros2_ws/install\local_setup.ps1"
-_colcon_prefix_chain_powershell_source_script "/home/vikmo/roover_ws/PrjRoover/ros2_ws/src/my_robot_package/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/vikmo/ros2_ws/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/vikmo/ros2_lidar_ws/install\local_setup.ps1"
 

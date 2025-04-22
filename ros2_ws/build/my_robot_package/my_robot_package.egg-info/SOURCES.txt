@@ -1,7 +1,10 @@
 package.xml
 setup.cfg
 setup.py
+launch/roover_control.launch.py
+launch/roover_slam.launch.py
 my_robot_package/__init__.py
+my_robot_package/cmd_vel_to_motors.py
 my_robot_package/joy_to_cmd_vel.py
 my_robot_package.egg-info/PKG-INFO
 my_robot_package.egg-info/SOURCES.txt

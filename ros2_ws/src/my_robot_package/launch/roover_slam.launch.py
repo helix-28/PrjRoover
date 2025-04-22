@@ -6,42 +6,51 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        # Déclare un argument pour le mode robot (utile si tu veux le conditionner dans tes nodes)
+        # Declare a launch argument for the robot mode (useful if you want to condition nodes)
         DeclareLaunchArgument('robot_mode', default_value='auto', description='Mode de fonctionnement du robot'),
 
-        # Lance le driver RPLIDAR
+        # Launch the 'joy_to_cmd_vel' node to read joystick input and send to cmd_vel
         Node(
-            package='rplidar_ros',  # Nom du package rplidar
-            executable='rplidar_node',
-            name='rplidar_node',
-            output='screen',
-            parameters=[{'serial_port': '/dev/ttyUSB0', 'frame_id': 'laser_frame'}],  # Ajuste le port série si nécessaire
-        ),
-
-        # Lance le script moteur avec odométrie
-        Node(
-            package='my_robot_package',
-            executable='cmd_vel_to_motors',
-            name='cmd_vel_to_motors_node',
+            package='my_robot_package',  # Replace with your actual package name
+            executable='joy_to_cmd_vel',
+            name='joy_to_cmd_vel_node',
             output='screen',
         ),
-
-        # Lance slam_toolbox (en mode en ligne pour la cartographie)
+        
+        # Launch slam_toolbox for online SLAM
         Node(
             package='slam_toolbox',
             executable='sync_slam_toolbox_node',
             name='slam_toolbox_node',
             output='screen',
-            parameters=[{'slam_mode': True, 'use_sim_time': False}],  # Remarques les booleans
-            remappings=[('/scan', '/rplidar_node/scan')]  # Le scan LiDAR va être sur ce topic
+            parameters=[{'slam_mode': True, 'use_sim_time': False}],  # Adjust the parameters based on your needs
+            remappings=[('/scan', '/rplidar_node/scan')]  # Map the LIDAR scan topic correctly
         ),
 
-        # Lance la transformation des frames
+        # Launch the odom publisher that will create the /odom and publish the tf
+        Node(
+            package='odom_publisher',  # Replace with the correct package name
+            executable='odom_publisher_node',
+            name='odom_publisher_node',
+            output='screen',
+        ),
+
+        # Launch the static transform publisher to provide the transform from laser to base_link
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
             name='static_transform_publisher',
-            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser_frame'],  # Transformation entre laser et base
+            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser_frame'],
+            output='screen',
+        ),
+        
+        # Launch RViz with the default SLAM configuration
+        Node(
+            package='rviz2',  # This is the ROS 2 RViz package
+            executable='rviz2',
+            name='rviz2',
+            output='screen',
+            arguments=['-d', '/opt/ros/jazzy/share/slam_toolbox/rviz/slam_config.rviz'],  # Default SLAM config file
         ),
     ])
 
