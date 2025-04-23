@@ -40,17 +40,19 @@ class JoystickToCmdVel(Node):
         vitesse = min(vitesse, 1.0)  # Limiter la vitesse à 1.0
         angle = math.degrees(math.atan2(gauche_y, gauche_x))  # calcul de l'angle
 
-        # Log pour débogage
-        self.get_logger().info(f"Vitesse: {vitesse}, Angle: {angle}, Rotation: {droite_x}")
+
+
 
         # Créer un message Twist pour la commande
         cmd_vel = Twist()
         cmd_vel.linear.x = vitesse  # Utilisation de la vitesse linéaire sur l'axe X
         cmd_vel.angular.z = math.radians(angle)  # Convertir l'angle en radians et l'appliquer à la rotation
         cmd_vel.linear.z = droite_x * 100
-
+        # Log pour débogage
+        self.get_logger().info(f"Vitesse: {vitesse}, Angle: {angle}, Rotation: {cmd_vel.linear.z}")
         # Publier sur le topic cmd_vel
         self.publisher_.publish(cmd_vel)
+
 
 
 def main(args=None):
