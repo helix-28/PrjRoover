@@ -47,7 +47,7 @@ class JoystickToCmdVel(Node):
         cmd_vel = Twist()
         cmd_vel.linear.x = vitesse  # Utilisation de la vitesse linéaire sur l'axe X
         cmd_vel.angular.z = math.radians(angle)  # Convertir l'angle en radians et l'appliquer à la rotation
-        cmd_vel.linear.z = droite_x
+        cmd_vel.linear.z = droite_x * 100
 
         # Publier sur le topic cmd_vel
         self.publisher_.publish(cmd_vel)
