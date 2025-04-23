@@ -1,1 +1,0 @@
-/home/Roover/PrjRoover/ros2_ws/odom_publisher/setup.py

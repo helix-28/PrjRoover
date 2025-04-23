@@ -1,2 +1,0 @@
-[console_scripts]
-odom_publisher_node = odom_publisher.odom_publisher_node:main

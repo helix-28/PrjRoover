@@ -27,20 +27,20 @@ def generate_launch_description():
             remappings=[('/scan', '/rplidar_node/scan')]  # Map the LIDAR scan topic correctly
         ),
 
-        # Launch the odom publisher that will create the /odom and publish the tf
+       # Lancer le nœud odom_publisher pour publier /odom et le tf
         Node(
-            package='odom_publisher',  # Replace with the correct package name
+            package='my_robot_package',  # Remplace par le nom correct de ton package
             executable='odom_publisher_node',
             name='odom_publisher_node',
             output='screen',
         ),
-
+        
         # Launch the static transform publisher to provide the transform from laser to base_link
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
             name='static_transform_publisher',
-            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser_frame'],
+            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser'],
             output='screen',
         ),
         

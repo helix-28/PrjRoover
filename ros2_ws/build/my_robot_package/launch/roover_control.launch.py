@@ -1,1 +1,0 @@
-/home/Roover/PrjRoover/ros2_ws/src/my_robot_package/launch/roover_control.launch.py
