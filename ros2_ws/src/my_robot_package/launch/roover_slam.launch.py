@@ -36,7 +36,7 @@ def generate_launch_description():
         ),
         
         # Launch the static transform publisher to provide the transform from laser to base_link
-        Node(
+        Node( 
             package='tf2_ros',
             executable='static_transform_publisher',
             name='static_transform_publisher',
