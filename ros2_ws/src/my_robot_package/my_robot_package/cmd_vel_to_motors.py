@@ -53,7 +53,7 @@ class CmdVelToMotors(Node):
     def listener_callback(self, msg):
         vx = msg.linear.x * 100
         vy = msg.linear.y * 100
-        rot = msg.angular.z
+        rot = msg.angular.z * 100
         self.get_logger().info(f"cmd_vel reçu : vx={vx:.2f}, vy={vy:.2f}, rot = {rot:.2f}")
         self.direction_mecanum(vx, vy, rot)
 
