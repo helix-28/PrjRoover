@@ -51,14 +51,13 @@ class CmdVelToMotors(Node):
         self.p4.start(25)
 
     def listener_callback(self, msg):
-        vitesse = msg.linear.x * 100
-        angle = math.degrees(msg.angular.z)
-        self.get_logger().info(f"cmd_vel reçu : vitesse={vitesse:.2f}, angle={angle:.2f}")
-        self.direction_mecanum(vitesse, angle, 0)
+        vx = msg.linear.x * 100
+        vy = msg.linear.y * 100
+        rot = msg.angular.z * 100
+        self.get_logger().info(f"cmd_vel reçu : vx={vx:.2f}, vy={vy:.2f}, rot = {rot:.2f}")
+        self.direction_mecanum(vx, vy, rot)
 
-    def direction_mecanum(self, vitesse, angle, rotation):
-        vx = vitesse * math.cos(math.radians(angle))
-        vy = vitesse * math.sin(math.radians(angle))
+    def direction_mecanum(self,vx, vy,  rotation):
 
         v_AVNT_DRT = vx + vy + rotation
         v_AVNT_GCH = vx - vy - rotation
