@@ -1,0 +1,132 @@
+[0.000000] (-) TimerEvent: {}
+[0.000775] (my_robot_package) JobQueued: {'identifier': 'my_robot_package', 'dependencies': OrderedDict()}
+[0.000904] (rplidar_ros) JobQueued: {'identifier': 'rplidar_ros', 'dependencies': OrderedDict()}
+[0.000964] (my_robot_package) JobStarted: {'identifier': 'my_robot_package'}
+[0.024813] (rplidar_ros) JobStarted: {'identifier': 'rplidar_ros'}
+[0.098177] (-) TimerEvent: {}
+[0.250978] (-) TimerEvent: {}
+[0.392550] (-) TimerEvent: {}
+[0.548938] (-) TimerEvent: {}
+[0.554741] (rplidar_ros) JobProgress: {'identifier': 'rplidar_ros', 'progress': 'cmake'}
+[0.559689] (rplidar_ros) Command: {'cmd': ['/usr/bin/cmake', '/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/src/rplidar_ros', '-DCMAKE_INSTALL_PREFIX=/home/vikmo/roover_ws/PrjRoover/install/rplidar_ros'], 'cwd': '/home/vikmo/roover_ws/PrjRoover/build/rplidar_ros', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'vikmo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/vikmo', 'OLDPWD': '/home/vikmo/roover_ws/PrjRoover', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2355', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'vikmo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'vikmo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/vikmo-VirtualBox:@/tmp/.ICE-unix/2293,unix/vikmo-VirtualBox:/tmp/.ICE-unix/2293', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9818d867_56d2_4ebf_b546_683bbd7ac0a7', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WNYF52', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.153', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/vikmo/roover_ws/PrjRoover/build/rplidar_ros', 'TURTLEBOT3_MODEL': 'waffle', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package:/opt/ros/jazzy'}), 'shell': False}
+[0.649103] (-) TimerEvent: {}
+[0.749718] (-) TimerEvent: {}
+[0.850412] (-) TimerEvent: {}
+[0.951063] (-) TimerEvent: {}
+[0.980519] (rplidar_ros) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[1.051571] (-) TimerEvent: {}
+[1.155616] (-) TimerEvent: {}
+[1.258464] (-) TimerEvent: {}
+[1.339084] (rplidar_ros) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[1.358635] (-) TimerEvent: {}
+[1.453680] (rplidar_ros) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.463791] (-) TimerEvent: {}
+[1.564687] (-) TimerEvent: {}
+[1.665350] (-) TimerEvent: {}
+[1.766849] (-) TimerEvent: {}
+[1.838947] (rplidar_ros) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.868263] (-) TimerEvent: {}
+[1.882553] (rplidar_ros) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.905918] (rplidar_ros) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.909461] (rplidar_ros) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.947172] (rplidar_ros) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.968835] (-) TimerEvent: {}
+[2.069646] (-) TimerEvent: {}
+[2.172864] (-) TimerEvent: {}
+[2.273616] (-) TimerEvent: {}
+[2.376588] (-) TimerEvent: {}
+[2.460884] (rplidar_ros) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.479576] (-) TimerEvent: {}
+[2.533592] (rplidar_ros) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[2.534796] (rplidar_ros) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.537781] (rplidar_ros) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.580644] (-) TimerEvent: {}
+[2.617527] (rplidar_ros) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[2.682552] (-) TimerEvent: {}
+[2.792488] (-) TimerEvent: {}
+[2.828516] (my_robot_package) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/my_robot_package', 'build', '--build-base', '/home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build', 'install', '--record', '/home/vikmo/roover_ws/PrjRoover/build/my_robot_package/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/src/my_robot_package', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'vikmo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/vikmo', 'OLDPWD': '/home/vikmo/roover_ws/PrjRoover', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2355', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'vikmo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'vikmo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/vikmo-VirtualBox:@/tmp/.ICE-unix/2293,unix/vikmo-VirtualBox:/tmp/.ICE-unix/2293', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9818d867_56d2_4ebf_b546_683bbd7ac0a7', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WNYF52', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.153', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/vikmo/roover_ws/PrjRoover/build/my_robot_package', 'TURTLEBOT3_MODEL': 'waffle', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/vikmo/roover_ws/PrjRoover/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.903968] (-) TimerEvent: {}
+[3.008416] (-) TimerEvent: {}
+[3.146347] (-) TimerEvent: {}
+[3.156531] (rplidar_ros) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[3.270172] (-) TimerEvent: {}
+[3.409166] (-) TimerEvent: {}
+[3.537627] (-) TimerEvent: {}
+[3.631877] (rplidar_ros) StdoutLine: {'line': b'-- Found rclcpp: 28.1.6 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[3.633904] (my_robot_package) StdoutLine: {'line': b'running egg_info\n'}
+[3.635102] (my_robot_package) StdoutLine: {'line': b'creating ../../../build/my_robot_package/my_robot_package.egg-info\n'}
+[3.638800] (-) TimerEvent: {}
+[3.704900] (my_robot_package) StdoutLine: {'line': b'writing ../../../build/my_robot_package/my_robot_package.egg-info/PKG-INFO\n'}
+[3.705554] (my_robot_package) StdoutLine: {'line': b'writing dependency_links to ../../../build/my_robot_package/my_robot_package.egg-info/dependency_links.txt\n'}
+[3.705958] (my_robot_package) StdoutLine: {'line': b'writing entry points to ../../../build/my_robot_package/my_robot_package.egg-info/entry_points.txt\n'}
+[3.706250] (my_robot_package) StdoutLine: {'line': b'writing requirements to ../../../build/my_robot_package/my_robot_package.egg-info/requires.txt\n'}
+[3.706639] (my_robot_package) StdoutLine: {'line': b'writing top-level names to ../../../build/my_robot_package/my_robot_package.egg-info/top_level.txt\n'}
+[3.706946] (my_robot_package) StdoutLine: {'line': b"writing manifest file '../../../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'\n"}
+[3.752365] (-) TimerEvent: {}
+[3.815621] (my_robot_package) StdoutLine: {'line': b"reading manifest file '../../../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'\n"}
+[3.818045] (my_robot_package) StdoutLine: {'line': b"writing manifest file '../../../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'\n"}
+[3.818642] (my_robot_package) StdoutLine: {'line': b'running build\n'}
+[3.819106] (my_robot_package) StdoutLine: {'line': b'running build_py\n'}
+[3.819503] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build\n'}
+[3.819687] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib\n'}
+[3.819920] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package\n'}
+[3.820169] (my_robot_package) StdoutLine: {'line': b'copying my_robot_package/joy_to_cmd_vel.py -> /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package\n'}
+[3.820647] (my_robot_package) StdoutLine: {'line': b'copying my_robot_package/__init__.py -> /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package\n'}
+[3.821083] (my_robot_package) StdoutLine: {'line': b'copying my_robot_package/cmd_vel_to_motors.py -> /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package\n'}
+[3.822173] (my_robot_package) StdoutLine: {'line': b'running install\n'}
+[3.840286] (my_robot_package) StdoutLine: {'line': b'running install_lib\n'}
+[3.854482] (-) TimerEvent: {}
+[3.869524] (rplidar_ros) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[3.905213] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package\n'}
+[3.905681] (my_robot_package) StdoutLine: {'line': b'copying /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package/joy_to_cmd_vel.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package\n'}
+[3.905961] (my_robot_package) StdoutLine: {'line': b'copying /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package/__init__.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package\n'}
+[3.906186] (my_robot_package) StdoutLine: {'line': b'copying /home/vikmo/roover_ws/PrjRoover/build/my_robot_package/build/lib/my_robot_package/cmd_vel_to_motors.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package\n'}
+[3.907443] (my_robot_package) StdoutLine: {'line': b'byte-compiling /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/joy_to_cmd_vel.py to joy_to_cmd_vel.cpython-312.pyc\n'}
+[3.909434] (my_robot_package) StdoutLine: {'line': b'byte-compiling /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/__init__.py to __init__.cpython-312.pyc\n'}
+[3.910081] (my_robot_package) StdoutLine: {'line': b'byte-compiling /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/cmd_vel_to_motors.py to cmd_vel_to_motors.cpython-312.pyc\n'}
+[3.913577] (my_robot_package) StdoutLine: {'line': b'running install_data\n'}
+[3.914024] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/ament_index\n'}
+[3.914287] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/ament_index/resource_index\n'}
+[3.914600] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/ament_index/resource_index/packages\n'}
+[3.915037] (my_robot_package) StdoutLine: {'line': b'copying resource/my_robot_package -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/ament_index/resource_index/packages\n'}
+[3.915219] (my_robot_package) StdoutLine: {'line': b'copying package.xml -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/my_robot_package\n'}
+[3.915459] (my_robot_package) StdoutLine: {'line': b'creating /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/my_robot_package/launch\n'}
+[3.915653] (my_robot_package) StdoutLine: {'line': b'copying launch/lidar_and_motor_launch.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/my_robot_package/launch\n'}
+[3.916632] (my_robot_package) StdoutLine: {'line': b'copying launch/roover_control.launch.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/my_robot_package/launch\n'}
+[3.917873] (my_robot_package) StdoutLine: {'line': b'copying launch/roover_slam.launch.py -> /home/vikmo/roover_ws/PrjRoover/install/my_robot_package/share/my_robot_package/launch\n'}
+[3.919658] (my_robot_package) StderrLine: {'line': b"error: can't copy 'launch/odom_publisher_launch.py': doesn't exist or not a regular file\n"}
+[3.941726] (rplidar_ros) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[3.963737] (-) TimerEvent: {}
+[3.972557] (my_robot_package) CommandEnded: {'returncode': 1}
+[3.973501] (my_robot_package) JobEnded: {'identifier': 'my_robot_package', 'rc': 1}
+[4.041452] (rplidar_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[4.064477] (-) TimerEvent: {}
+[4.130051] (rplidar_ros) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.179395] (-) TimerEvent: {}
+[4.284577] (-) TimerEvent: {}
+[4.416341] (-) TimerEvent: {}
+[4.488922] (rplidar_ros) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[4.505955] (rplidar_ros) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[4.518091] (-) TimerEvent: {}
+[4.642656] (-) TimerEvent: {}
+[4.754204] (-) TimerEvent: {}
+[4.855021] (-) TimerEvent: {}
+[4.877438] (rplidar_ros) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[4.936211] (rplidar_ros) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[4.960420] (-) TimerEvent: {}
+[5.002167] (rplidar_ros) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[5.086946] (-) TimerEvent: {}
+[5.222497] (-) TimerEvent: {}
+[5.311194] (rplidar_ros) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[5.327822] (-) TimerEvent: {}
+[5.444598] (-) TimerEvent: {}
+[5.561797] (rplidar_ros) StdoutLine: {'line': b'-- Found std_srvs: 5.3.5 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[5.562261] (-) TimerEvent: {}
+[5.700851] (-) TimerEvent: {}
+[5.843982] (-) TimerEvent: {}
+[5.865324] (rplidar_ros) StdoutLine: {'line': b'-- Configuring done (5.3s)\n'}
+[5.919576] (rplidar_ros) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[5.932323] (rplidar_ros) StdoutLine: {'line': b'-- Build files have been written to: /home/vikmo/roover_ws/PrjRoover/build/rplidar_ros\n'}
+[5.946756] (-) TimerEvent: {}
+[5.959146] (rplidar_ros) JobEnded: {'identifier': 'rplidar_ros', 'rc': 'SIGINT'}
+[5.972247] (-) EventReactorShutdown: {}
