@@ -42,7 +42,7 @@ class JoystickToCmdVel(Node):
         cmd_vel.linear.y = gauche_y
         cmd_vel.angular.z = droite_x
         # Log pour débogage
-        self.get_logger().info(f"vx: {cmd_vel.linear.x}, vy: {cmd_vel.linear.y}, Rotation: {cmd_vel.linear.z}")
+        self.get_logger().info(f"vx: {cmd_vel.linear.x}, vy: {cmd_vel.linear.y}, Rotation: {cmd_vel.angular.z}")
         # Publier sur le topic cmd_vel
         self.publisher_.publish(cmd_vel)
 
