@@ -30,9 +30,9 @@ class OdometryPublisher(Node):
         odom_msg.header.frame_id = "odom"
         odom_msg.child_frame_id = "base_link"
 
-        vx = msg.linear.x * 100
-        vy = msg.linear.y * 100
-        rot = msg.angular.z * 100
+        vx = msg.linear.x * 10
+        vy = msg.linear.y * 10
+        rot = msg.angular.z * 10
 
         # Remplir l'odométrie avec les vitesses linéaires et angulaires
         odom_msg.twist.twist.linear.x = vx
