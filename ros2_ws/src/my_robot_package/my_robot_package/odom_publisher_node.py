@@ -45,16 +45,19 @@ class OdometryPublisher(Node):
         transform.child_frame_id = "base_link"
 
         # Définir les coordonnées x, y
-        transform.transform.translation.x = msg.linear.x
-        transform.transform.translation.y = msg.linear.y
+        transform.transform.translation.x = msg.linear.x * 100
+        transform.transform.translation.y = msg.linear.y * 100
         transform.transform.translation.z = 0.0  # Pas de mouvement vertical
 
         # Convertir l'angle de rotation Z (yaw) en quaternion
-        qx, qy, qz, qw = self.yaw_to_quaternion(msg.angular.z)
-        transform.transform.rotation.x = qx
-        transform.transform.rotation.y = qy
-        transform.transform.rotation.z = qz
-        transform.transform.rotation.w = qw
+       # qx, qy, qz, qw = self.yaw_to_quaternion(msg.angular.z)
+        #transform.transform.rotation.x = qx
+        #transform.transform.rotation.y = qy
+       # transform.transform.rotation.z = qz
+       # transform.transform.rotation.w = qw
+
+        transform.transform.rotation.z = msg.linear.z * 100
+
 
         # Publier la transformation
         self.tf_broadcaster.sendTransform(transform)
