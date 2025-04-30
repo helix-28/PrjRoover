@@ -59,10 +59,10 @@ class CmdVelToMotors(Node):
 
     def direction_mecanum(self,vx, vy,  rotation):
 
-        v_AVNT_DRT = vx + vy + rotation
-        v_AVNT_GCH = vx - vy - rotation
+        v_AVNT_DRT = vx + vy +  rotation
+        v_AVNT_GCH = vx - vy + rotation
         v_ARR_DRT = vx - vy - rotation
-        v_ARR_GCH = vx + vy + rotation
+        v_ARR_GCH = vx + vy - rotation
 
         max_val = max(abs(v_AVNT_DRT), abs(v_AVNT_GCH), abs(v_ARR_GCH), abs(v_ARR_DRT))
         if max_val > 100:
