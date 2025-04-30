@@ -30,10 +30,14 @@ class OdometryPublisher(Node):
         odom_msg.header.frame_id = "odom"
         odom_msg.child_frame_id = "base_link"
 
+        vx = msg.linear.x * 100
+        vy = msg.linear.y * 100
+        rot = msg.angular.z * 100
+
         # Remplir l'odométrie avec les vitesses linéaires et angulaires
-        odom_msg.twist.twist.linear.x = msg.linear.x
-        odom_msg.twist.twist.linear.y = msg.linear.y
-        odom_msg.twist.twist.angular.z = msg.angular.z
+        odom_msg.twist.twist.linear.x = vx
+        odom_msg.twist.twist.linear.y = vy
+        odom_msg.twist.twist.angular.z = rot
 
         # Publier l'odométrie
         self.odom_pub.publish(odom_msg)
@@ -45,8 +49,8 @@ class OdometryPublisher(Node):
         transform.child_frame_id = "base_link"
 
         # Définir les coordonnées x, y
-        transform.transform.translation.x = msg.linear.x * 100
-        transform.transform.translation.y = msg.linear.y * 100
+        transform.transform.translation.x = vx
+        transform.transform.translation.y = vy
         transform.transform.translation.z = 0.0  # Pas de mouvement vertical
 
         # Convertir l'angle de rotation Z (yaw) en quaternion
@@ -56,7 +60,7 @@ class OdometryPublisher(Node):
        # transform.transform.rotation.z = qz
        # transform.transform.rotation.w = qw
 
-        transform.transform.rotation.z = msg.linear.z * 100
+        transform.transform.rotation.z = rot
 
 
         # Publier la transformation
