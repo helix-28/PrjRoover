@@ -89,7 +89,10 @@
 
     <main>
         <!-- Carte -->
-        <div id="map"></div>
+        <div id="map">
+            <img id="map-image" style="width: 100%; height: 100%; object-fit: contain;" alt="Carte ROS">
+        </div>
+
 
         <!-- Manette Xbox -->
         <div class="controller">
@@ -202,6 +205,18 @@
             console.log("Manette connectée !");
             updateGamepad();
         });
+
+
+        // Connexion WebSocket pour la carte
+        const socket = new WebSocket('ws://localhost:8765');
+        socket.onmessage = function(event) {
+          const mapImg = document.getElementById('map-image');
+          mapImg.src = event.data;
+        };
+        socket.onerror = function(err) {
+            console.error('Erreur WebSocket:', err);
+        };
+
     </script>
 </body>
 </html>
