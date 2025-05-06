@@ -13,19 +13,28 @@
             color: white;
             padding: 15px;
         }
-         button {
+        button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
         }
-         .carte {
+        .carte {
             width: 1000px;
             height: 500px;
             background-color: #d3d3d3;
-            margin: 50px auto; /* centre horizontalement */
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
         }
-
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -33,12 +42,23 @@
         <h1>Mode : Envoi automatique</h1>
     </header>
     <main>
-        <div class="carte"></div>
-        <p>Fonctionnalité à venir : sélectionnez un point sur la carte pour y envoyer le rover automatiquement.</p>
+        <div class="carte">
+            <img id="map" alt="Carte en attente..." />
+        </div>
         <button onclick="window.location.href='index.html'">Retour à l'accueil</button>
     </main>
     <footer>
         <p>&copy;2025 Bois-de-Boulogne</p>
     </footer>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8765');
+        socket.onmessage = function(event) {
+            document.getElementById('map').src = event.data;
+        };
+        socket.onerror = function(err) {
+            console.error('Erreur WebSocket:', err);
+        };
+    </script>
 </body>
 </html>
