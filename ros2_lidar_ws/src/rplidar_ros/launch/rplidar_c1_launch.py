@@ -5,7 +5,6 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.actions import LogInfo
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
@@ -18,6 +17,8 @@ def generate_launch_description():
     inverted = LaunchConfiguration('inverted', default='false')
     angle_compensate = LaunchConfiguration('angle_compensate', default='true')
     scan_mode = LaunchConfiguration('scan_mode', default='Standard')
+    
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')  # Set use_sim_time to false
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -55,17 +56,23 @@ def generate_launch_description():
             default_value=scan_mode,
             description='Specifying scan mode of lidar'),
 
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value=use_sim_time,
+            description='Specifying whether or not to use simulation time'),
+
         Node(
             package='rplidar_ros',
             executable='rplidar_node',
             name='rplidar_node',
-            parameters=[{'channel_type':channel_type,
+            parameters=[{'channel_type': channel_type,
                          'serial_port': serial_port,
                          'serial_baudrate': serial_baudrate,
                          'frame_id': frame_id,
                          'inverted': inverted,
                          'angle_compensate': angle_compensate,
-                         'scan_mode': scan_mode}],
+                         'scan_mode': scan_mode,
+                         'use_sim_time': 'false'}],  # Set use_sim_time to false explicitly
             output='screen'),
     ])
 

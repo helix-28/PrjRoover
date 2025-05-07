@@ -1,12 +1,1 @@
-from launch import LaunchDescription
-from launch_ros.actions import Node
-
-def generate_launch_description():
-    return LaunchDescription([
-        Node(
-            package='my_robot_package',
-            executable='odom_publisher_node',
-            output='screen',
-            name='odom_publisher_node'
-        ),
-    ])
+/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/launch/odom_publisher_launch.py

@@ -1,4 +1,5 @@
 [console_scripts]
 cmd_vel_to_motors = my_robot_package.cmd_vel_to_motors:main
 joy_to_cmd_vel = my_robot_package.joy_to_cmd_vel:main
+map_websocket_node = my_robot_package.map_websocket_node:main
 odom_publisher_node = my_robot_package.odom_publisher_node:main

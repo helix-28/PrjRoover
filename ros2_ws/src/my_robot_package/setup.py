@@ -16,7 +16,7 @@ setup(
             'launch/lidar_and_motor_launch.py',
             'launch/roover_control.launch.py',
             'launch/roover_slam.launch.py',
-            'launch/odom_publisher_launch.py',  # Ajout du fichier de lancement ici
+            'launch/odom_publisher_launch.py',
         ]),
     ],
     install_requires=['setuptools'],
@@ -30,7 +30,8 @@ setup(
         'console_scripts': [
             'joy_to_cmd_vel = my_robot_package.joy_to_cmd_vel:main',
             'cmd_vel_to_motors = my_robot_package.cmd_vel_to_motors:main',
-            'odom_publisher_node = my_robot_package.odom_publisher_node:main',  # Ajout de l'entrée pour odom_publisher_node
+            'odom_publisher_node = my_robot_package.odom_publisher_node:main',
+            'map_websocket_node = my_robot_package.map_websocket_node:main',
         ],
     },
 )

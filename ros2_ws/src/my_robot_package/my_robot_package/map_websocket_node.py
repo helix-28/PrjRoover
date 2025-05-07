@@ -18,7 +18,7 @@ class MapWebSocketNode(Node):
             self.map_callback,
             10)
         self.map_data = None
-        self.clients = set()
+        self.websocket_clients = set()  # Changement ici de clients à websocket_clients
         threading.Thread(target=self.run_websocket_server, daemon=True).start()
 
     def map_callback(self, msg):
@@ -41,16 +41,16 @@ class MapWebSocketNode(Node):
         asyncio.run(self.broadcast(img_b64))
 
     async def broadcast(self, img_data):
-        if self.clients:
+        if self.websocket_clients:  # Changement ici de clients à websocket_clients
             message = f'data:image/png;base64,{img_data}'
-            await asyncio.wait([client.send(message) for client in self.clients])
+            await asyncio.wait([client.send(message) for client in self.websocket_clients])
 
     async def handler(self, websocket, path):
-        self.clients.add(websocket)
+        self.websocket_clients.add(websocket)  # Changement ici de clients à websocket_clients
         try:
             await websocket.wait_closed()
         finally:
-            self.clients.remove(websocket)
+            self.websocket_clients.remove(websocket)  # Changement ici de clients à websocket_clients
 
     def run_websocket_server(self):
         loop = asyncio.new_event_loop()
@@ -71,3 +71,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+

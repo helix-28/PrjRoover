@@ -1,8 +1,8 @@
-# Install script for directory: /home/Roover/PrjRoover/ros2_lidar_ws/src/rplidar_ros
+# Install script for directory: /home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/src/rplidar_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/Roover/PrjRoover/ros2_lidar_ws/install/rplidar_ros")
+  set(CMAKE_INSTALL_PREFIX "/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/install/rplidar_ros")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/Roover/PrjRoover/ros2_lidar_ws/build/rplidar_ros/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/build/rplidar_ros/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/Roover/PrjRoover/ros2_lidar_ws/build/rplidar_ros/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/build/rplidar_ros/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

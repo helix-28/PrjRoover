@@ -1,1 +1,1 @@
-/home/Roover/PrjRoover/ros2_lidar_ws/build/rplidar_ros/ament_cmake_environment_hooks/local_setup.bash
+/home/vikmo/roover_ws/PrjRoover/ros2_lidar_ws/build/rplidar_ros/ament_cmake_environment_hooks/local_setup.bash
