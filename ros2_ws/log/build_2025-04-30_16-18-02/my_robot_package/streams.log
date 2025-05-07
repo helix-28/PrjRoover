@@ -1,0 +1,24 @@
+[2.276s] Invoking command in '/home/vikmo/roover_ws/PrjRoover/ros2_ws/src/my_robot_package': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_package build --build-base /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/build install --record /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/install.log --single-version-externally-managed install_data
+[3.100s] running egg_info
+[3.162s] writing ../../build/my_robot_package/my_robot_package.egg-info/PKG-INFO
+[3.165s] writing dependency_links to ../../build/my_robot_package/my_robot_package.egg-info/dependency_links.txt
+[3.165s] writing entry points to ../../build/my_robot_package/my_robot_package.egg-info/entry_points.txt
+[3.165s] writing requirements to ../../build/my_robot_package/my_robot_package.egg-info/requires.txt
+[3.166s] writing top-level names to ../../build/my_robot_package/my_robot_package.egg-info/top_level.txt
+[3.313s] reading manifest file '../../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+[3.319s] writing manifest file '../../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+[3.319s] running build
+[3.320s] running build_py
+[3.321s] running install
+[3.342s] running install_lib
+[3.435s] running install_data
+[3.436s] copying launch/roover_slam.launch.py -> /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+[3.437s] running install_egg_info
+[3.503s] removing '/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info' (and everything under it)
+[3.504s] Copying ../../build/my_robot_package/my_robot_package.egg-info to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info
+[3.506s] running install_scripts
+[3.907s] Installing cmd_vel_to_motors script to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/my_robot_package
+[3.909s] Installing joy_to_cmd_vel script to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/my_robot_package
+[3.910s] Installing odom_publisher_node script to /home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/my_robot_package
+[3.912s] writing list of installed files to '/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/install.log'
+[4.041s] Invoked command in '/home/vikmo/roover_ws/PrjRoover/ros2_ws/src/my_robot_package' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vikmo/roover_ws/PrjRoover/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot_package build --build-base /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/build install --record /home/vikmo/roover_ws/PrjRoover/ros2_ws/build/my_robot_package/install.log --single-version-externally-managed install_data

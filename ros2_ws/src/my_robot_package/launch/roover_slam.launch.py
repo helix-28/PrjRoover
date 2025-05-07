@@ -17,16 +17,6 @@ def generate_launch_description():
             output='screen',
         ),
         
-        # Launch slam_toolbox for online SLAM
-        Node(
-            package='slam_toolbox',
-            executable='sync_slam_toolbox_node',
-            name='slam_toolbox_node',
-            output='screen',
-            parameters=[{'slam_mode': True, 'use_sim_time': False}],  # Adjust the parameters based on your needs
-            remappings=[('/scan', '/rplidar_node/scan')]  # Map the LIDAR scan topic correctly
-        ),
-
        # Lancer le nœud odom_publisher pour publier /odom et le tf
         Node(
             package='my_robot_package',  # Remplace par le nom correct de ton package
