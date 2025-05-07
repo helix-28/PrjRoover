@@ -8,17 +8,15 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-
 def generate_launch_description():
-    channel_type =  LaunchConfiguration('channel_type', default='serial')
+    channel_type = LaunchConfiguration('channel_type', default='serial')
     serial_port = LaunchConfiguration('serial_port', default='/dev/ttyUSB0')
     serial_baudrate = LaunchConfiguration('serial_baudrate', default='460800')
     frame_id = LaunchConfiguration('frame_id', default='laser')
     inverted = LaunchConfiguration('inverted', default='false')
     angle_compensate = LaunchConfiguration('angle_compensate', default='true')
     scan_mode = LaunchConfiguration('scan_mode', default='Standard')
-    
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')  # Set use_sim_time to false
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')  # Correct: stays a LaunchConfiguration
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -35,7 +33,7 @@ def generate_launch_description():
             'serial_baudrate',
             default_value=serial_baudrate,
             description='Specifying usb port baudrate to connected lidar'),
-        
+
         DeclareLaunchArgument(
             'frame_id',
             default_value=frame_id,
@@ -65,14 +63,16 @@ def generate_launch_description():
             package='rplidar_ros',
             executable='rplidar_node',
             name='rplidar_node',
-            parameters=[{'channel_type': channel_type,
-                         'serial_port': serial_port,
-                         'serial_baudrate': serial_baudrate,
-                         'frame_id': frame_id,
-                         'inverted': inverted,
-                         'angle_compensate': angle_compensate,
-                         'scan_mode': scan_mode,
-                         'use_sim_time': 'false'}],  # Set use_sim_time to false explicitly
+            parameters=[{
+                'channel_type': channel_type,
+                'serial_port': serial_port,
+                'serial_baudrate': serial_baudrate,
+                'frame_id': frame_id,
+                'inverted': inverted,
+                'angle_compensate': angle_compensate,
+                'scan_mode': scan_mode,
+                'use_sim_time': use_sim_time  # CORRECT: pass as LaunchConfiguration
+            }],
             output='screen'),
     ])
 
